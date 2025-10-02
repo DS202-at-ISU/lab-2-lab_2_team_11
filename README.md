@@ -159,3 +159,37 @@ unusually high prices. These cases may be explained by other factors
 like property condition, renovations, or desirable locations. This
 confirms that living space is one of the strongest predictors of sale
 price in Ames.
+
+##### Deesha’s work: YearBuilt vs. Sale Price
+
+``` r
+ggplot(ames_clean, aes(x = `YearBuilt`, y = `Sale Price`)) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", color = "blue") +
+  labs(title = "Sale Price vs. Year Built",
+       x = "Year Built",
+       y = "Sale Price")
+```
+
+    ## Warning: Removed 329 rows containing non-finite outside the scale range
+    ## (`stat_smooth()`).
+
+    ## Warning: Removed 329 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+I explored how the year a house was built relates to its sale price. The
+range of construction years spans from the early 1900s to the 2010s.
+Most homes were built between 1950 and 2000, with fewer houses from very
+early or very recent years. The scatterplot shows a general positive
+trend: newer homes tend to sell for higher prices. The regression line
+confirms this relationship.
+
+At the same time, there are notable outliers: some older homes sold for
+surprisingly high prices, possibly due to renovations, historical value,
+or location. Likewise, some newer homes sold for lower-than-expected
+prices, which could be influenced by factors like lot size, condition,
+or neighborhood. This analysis confirms that the year built is a
+meaningful predictor of sale price, though other factors also play an
+important role.
