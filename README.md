@@ -193,3 +193,31 @@ prices, which could be influenced by factors like lot size, condition,
 or neighborhood. This analysis confirms that the year built is a
 meaningful predictor of sale price, though other factors also play an
 important role.
+
+##### Mahathi’s Work:
+
+``` r
+ggplot(ames_clean, aes(x = `LotArea(sf)`, y = `Sale Price`)) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "lm", color = "green") +
+  labs(title = "Sale Price vs. Lot Area",
+       x = "Lot Area (square feet)",
+       y = "Sale Price")
+```
+
+    ## Warning: Removed 59 rows containing non-finite outside the scale range
+    ## (`stat_smooth()`).
+
+    ## Warning: Removed 59 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- --> I looked at
+the relationship between the lot area and the sale price of the house.
+The average lot area is around 10,000 square foot and it sells between
+\$250,000 and \$500,000. The scatterplot shows a slightly positive trend
+for lot area and sale price. There are some outliers that have a small
+lot area and a high sale price. This could be due to other factors like
+a neighborhood being affluent or some other external benefit. At the
+same time, there were other areas with large lot sizes that sold for
+cheap. Potentially due to the being fixer uppers or in a poor
+neighborhood.
